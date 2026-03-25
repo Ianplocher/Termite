@@ -43,14 +43,23 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground))",
         },
         navy: {
-          DEFAULT: "#1B2A4A",
-          dark: "#0F1A2E",
-          light: "#2A3F6A",
+          DEFAULT: "#0D210F",
+          dark: "#081009",
+          light: "#344C38",
         },
         orange: {
-          DEFAULT: "#F97316",
-          dark: "#EA580C",
-          light: "#FB923C",
+          DEFAULT: "#28812C",
+          dark: "#1E6622",
+          light: "#309C42",
+        },
+        lime: {
+          DEFAULT: "#D7FD19",
+          dark: "#B8D916",
+          light: "#E4FF5C",
+        },
+        cream: {
+          DEFAULT: "#F5F7ED",
+          dark: "#F1EFEB",
         },
       },
       borderRadius: {

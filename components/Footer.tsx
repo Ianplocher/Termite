@@ -14,7 +14,7 @@ export default function Footer() {
             </p>
             <a
               href="tel:9515550100"
-              className="text-orange hover:text-orange-light font-semibold text-lg"
+              className="text-lime hover:text-lime-light font-semibold text-lg"
             >
               (951) 555-0100
             </a>
@@ -24,11 +24,11 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-3">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/schedule" className="hover:text-orange transition-colors">Schedule Free Inspection</Link></li>
-              <li><Link href="/how-it-works" className="hover:text-orange transition-colors">How It Works</Link></li>
-              <li><Link href="/why-termite-inspections" className="hover:text-orange transition-colors">Why Inspect?</Link></li>
-              <li><Link href="/service-areas" className="hover:text-orange transition-colors">Service Areas</Link></li>
-              <li><Link href="/faq" className="hover:text-orange transition-colors">FAQ</Link></li>
+              <li><Link href="/schedule" className="hover:text-lime transition-colors">Schedule Free Inspection</Link></li>
+              <li><Link href="/how-it-works" className="hover:text-lime transition-colors">How It Works</Link></li>
+              <li><Link href="/why-termite-inspections" className="hover:text-lime transition-colors">Why Inspect?</Link></li>
+              <li><Link href="/service-areas" className="hover:text-lime transition-colors">Service Areas</Link></li>
+              <li><Link href="/faq" className="hover:text-lime transition-colors">FAQ</Link></li>
             </ul>
           </div>
 

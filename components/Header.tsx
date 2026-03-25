@@ -20,7 +20,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <svg className="w-8 h-8 text-orange" fill="currentColor" viewBox="0 0 24 24">
+            <svg className="w-8 h-8 text-lime" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
             </svg>
             <span className="font-bold text-lg hidden sm:inline">Riverside Termite Inspection</span>
@@ -33,7 +33,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-200 hover:text-orange transition-colors"
+                className="text-sm text-gray-200 hover:text-lime transition-colors"
               >
                 {link.label}
               </Link>
@@ -52,7 +52,7 @@ export default function Header() {
               (951) 555-0100
             </a>
             <Link href="/schedule">
-              <Button className="bg-orange hover:bg-orange-dark text-white font-semibold text-sm px-4 py-2">
+              <Button className="bg-lime hover:bg-lime-dark text-navy font-semibold text-sm px-4 py-2">
                 Schedule Now
               </Button>
             </Link>
@@ -83,7 +83,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block py-2 text-gray-200 hover:text-orange transition-colors"
+                className="block py-2 text-gray-200 hover:text-lime transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}

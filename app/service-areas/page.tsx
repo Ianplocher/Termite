@@ -121,7 +121,7 @@ export default function ServiceAreasPage() {
             Same-week appointments available. Book online in 60 seconds.
           </p>
           <Link href="/schedule">
-            <Button size="lg" className="bg-orange hover:bg-orange-dark text-white font-bold text-lg px-8 py-6">
+            <Button size="lg" className="bg-lime hover:bg-lime-dark text-navy font-bold text-lg px-8 py-6">
               Schedule My Free Inspection
             </Button>
           </Link>

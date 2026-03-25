@@ -108,7 +108,7 @@ export default function HowItWorksPage() {
             Book your free termite inspection in Riverside today. It only takes 60 seconds.
           </p>
           <Link href="/schedule">
-            <Button size="lg" className="bg-orange hover:bg-orange-dark text-white font-bold text-lg px-8 py-6">
+            <Button size="lg" className="bg-lime hover:bg-lime-dark text-navy font-bold text-lg px-8 py-6">
               Schedule My Free Inspection
             </Button>
           </Link>

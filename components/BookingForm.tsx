@@ -59,9 +59,8 @@ export default function BookingForm() {
     if (!validate()) return;
 
     setLoading(true);
-    // Simulate API call
-    await new Promise((r) => setTimeout(r, 800));
-    console.log("Lead form data:", form);
+    // Brief delay for UX feedback
+    await new Promise((r) => setTimeout(r, 300));
     setLoading(false);
     setStep(2);
   }
@@ -196,7 +195,7 @@ export default function BookingForm() {
       <Button
         type="submit"
         disabled={loading}
-        className="w-full bg-orange hover:bg-orange-dark text-white font-bold text-lg py-6 rounded-lg"
+        className="w-full bg-orange hover:bg-orange-dark text-white font-bold text-lg py-6 rounded-lg disabled:opacity-50"
       >
         {loading ? (
           <span className="flex items-center gap-2">
@@ -213,6 +212,9 @@ export default function BookingForm() {
 
       <p className="text-xs text-gray-500 text-center">
         Your information is secure and will only be used to schedule your free inspection.
+      </p>
+      <p className="text-xs text-gray-400 text-center">
+        The inspection and report are free. If official paperwork is needed (e.g. escrow clearance letter), filing fees may apply and will be discussed before any commitment.
       </p>
     </form>
   );

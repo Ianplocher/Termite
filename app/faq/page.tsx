@@ -12,7 +12,12 @@ const faqs = [
   {
     question: "Is the termite inspection really free?",
     answer:
-      "Yes, 100% free. There are no hidden fees, no obligation to purchase treatment, and no catches. We provide a complete written inspection report at absolutely no cost to you.",
+      "Yes, the inspection itself is 100% free — no hidden fees, no obligation, and no catches. You'll receive a complete written inspection report at no cost. The only exception is if you need official paperwork filed on your behalf, such as a clearance letter for escrow. Filing fees apply for those documents, but your inspector will explain any costs upfront before you agree to anything.",
+  },
+  {
+    question: "Do you charge for escrow clearance letters or other paperwork?",
+    answer:
+      "The inspection and report are always free. However, if you need us to file official documentation — such as a Section 1 clearance letter for escrow or a Wood Destroying Organism (WDO) report for your lender — there is a filing fee for that paperwork. Your inspector will let you know exactly what's needed and the cost before any paperwork is filed. There's never an obligation.",
   },
   {
     question: "How long does a termite inspection in Riverside take?",
@@ -114,7 +119,7 @@ export default function FAQPage() {
             Protect your Riverside home. Schedule online in 60 seconds.
           </p>
           <Link href="/schedule">
-            <Button size="lg" className="bg-orange hover:bg-orange-dark text-white font-bold text-lg px-8 py-6">
+            <Button size="lg" className="bg-lime hover:bg-lime-dark text-navy font-bold text-lg px-8 py-6">
               Schedule My Free Inspection
             </Button>
           </Link>

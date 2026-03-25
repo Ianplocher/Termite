@@ -14,7 +14,7 @@ export default function CTABanner() {
         <Link href="/schedule">
           <Button
             size="lg"
-            className="bg-orange hover:bg-orange-dark text-white font-bold text-lg px-8 py-6 rounded-lg"
+            className="bg-lime hover:bg-lime-dark text-navy font-bold text-lg px-8 py-6 rounded-lg"
           >
             Schedule Now
           </Button>

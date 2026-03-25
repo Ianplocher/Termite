@@ -10,6 +10,9 @@ interface CalendarProps {
     phone: string;
     email: string;
     address: string;
+    propertyType: string;
+    bestTime: string;
+    notes: string;
   };
 }
 
@@ -40,6 +43,8 @@ export default function Calendar({ formData }: CalendarProps) {
   const [currentYear, setCurrentYear] = useState(today.getFullYear());
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const calendarDays = useMemo(() => {
     const firstDay = new Date(currentYear, currentMonth, 1);
@@ -81,25 +86,38 @@ export default function Calendar({ formData }: CalendarProps) {
     }
   }
 
-  function handleTimeSelect(time: string) {
+  async function handleTimeSelect(time: string) {
     setSelectedTime(time);
-    console.log("Booking confirmed:", {
+    setSubmitting(true);
+    setSubmitError(null);
+
+    const bookingData = {
       ...formData,
       date: selectedDate,
       time,
-    });
-    // Store in sessionStorage for thank-you page
-    if (typeof window !== "undefined") {
-      sessionStorage.setItem(
-        "booking",
-        JSON.stringify({
-          ...formData,
-          date: selectedDate,
-          time,
-        })
-      );
+    };
+
+    try {
+      const res = await fetch("/api/submit-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(bookingData),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to submit booking");
+      }
+
+      // Store in sessionStorage for thank-you page
+      if (typeof window !== "undefined") {
+        sessionStorage.setItem("booking", JSON.stringify(bookingData));
+      }
+      router.push("/thank-you");
+    } catch (err) {
+      console.error("Booking submission error:", err);
+      setSubmitError("Something went wrong. Please try again or call (951) 555-0100.");
+      setSubmitting(false);
     }
-    router.push("/thank-you");
   }
 
   const canGoPrev = !(currentYear === today.getFullYear() && currentMonth <= today.getMonth());
@@ -185,6 +203,20 @@ export default function Calendar({ formData }: CalendarProps) {
               day: "numeric",
             })}
           </h4>
+          {submitError && (
+            <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-4 text-sm text-red-700">
+              {submitError}
+            </div>
+          )}
+          {submitting && (
+            <div className="flex items-center justify-center gap-2 mb-4 text-navy">
+              <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+              </svg>
+              <span className="font-medium">Booking your inspection...</span>
+            </div>
+          )}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {TIME_SLOTS.map((slot, i) => {
               const status = getSlotStatus(selectedDate, i);
@@ -194,7 +226,7 @@ export default function Calendar({ formData }: CalendarProps) {
                 <Button
                   key={slot}
                   variant={selectedTime === slot ? "default" : "outline"}
-                  disabled={isBooked}
+                  disabled={isBooked || submitting}
                   onClick={() => handleTimeSelect(slot)}
                   className={`
                     relative py-6 text-base justify-between

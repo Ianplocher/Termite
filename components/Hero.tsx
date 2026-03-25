@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
-          backgroundImage: "radial-gradient(circle at 25% 25%, #F97316 1px, transparent 1px), radial-gradient(circle at 75% 75%, #F97316 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle at 25% 25%, #309C42 1px, transparent 1px), radial-gradient(circle at 75% 75%, #309C42 1px, transparent 1px)",
           backgroundSize: "50px 50px"
         }} />
       </div>
@@ -16,7 +16,7 @@ export default function Hero() {
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance">
             Free Termite Inspection in{" "}
-            <span className="text-orange">Riverside, CA</span>
+            <span className="text-lime">Riverside, CA</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 text-balance">
             Licensed inspectors. No obligation. Book your spot in 60 seconds.
@@ -24,7 +24,7 @@ export default function Hero() {
           <Link href="/schedule">
             <Button
               size="lg"
-              className="bg-orange hover:bg-orange-dark text-white font-bold text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all"
+              className="bg-lime hover:bg-lime-dark text-navy font-bold text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all"
             >
               Schedule My Free Inspection
             </Button>

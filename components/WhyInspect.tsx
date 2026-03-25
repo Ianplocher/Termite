@@ -17,7 +17,7 @@ const reasons = [
   {
     stat: "Required",
     title: "For Home Sales",
-    description: "Most lenders require a termite inspection before approving a home sale. Get ahead of the process with a free inspection.",
+    description: "Most lenders require a termite inspection before approving a home sale. The inspection is free — if you need official clearance paperwork filed for escrow, a small filing fee applies.",
   },
 ];
 
