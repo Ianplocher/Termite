@@ -33,8 +33,15 @@ function StarRating({ count }: { count: number }) {
 
 export default function ReviewsSection() {
   return (
-    <section className="py-16 md:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-16 md:py-20 overflow-hidden">
+      {/* Background image of Riverside homes */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/hero-homes.jpg')" }}
+      />
+      <div className="absolute inset-0 bg-white/90" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
             Trusted by Riverside Homeowners
@@ -48,7 +55,7 @@ export default function ReviewsSection() {
           {reviews.map((review) => (
             <div
               key={review.name}
-              className="bg-gray-50 rounded-xl p-6 border border-gray-100"
+              className="bg-white rounded-xl p-6 border border-gray-100 shadow-md"
             >
               <StarRating count={review.rating} />
               <p className="mt-4 text-gray-700 leading-relaxed">&ldquo;{review.text}&rdquo;</p>

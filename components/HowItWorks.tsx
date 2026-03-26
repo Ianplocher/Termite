@@ -35,13 +35,27 @@ export default function HowItWorks() {
   return (
     <section className="py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-            How Your Free Termite Inspection Works
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Getting a professional termite inspection in Riverside has never been easier. Three simple steps to protect your home.
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+          {/* Left side - image */}
+          <div className="relative rounded-2xl overflow-hidden shadow-xl">
+            <div
+              className="w-full h-72 md:h-96 bg-cover bg-center"
+              style={{ backgroundImage: "url('/inspector-home.jpg')" }}
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy/80 to-transparent p-6">
+              <p className="text-white font-semibold text-lg">Don't let termite damage go undetected</p>
+            </div>
+          </div>
+
+          {/* Right side - text */}
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+              How Your Free Termite Inspection Works
+            </h2>
+            <p className="text-lg text-gray-600">
+              Getting a professional termite inspection in Riverside has never been easier. Three simple steps to protect your home.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

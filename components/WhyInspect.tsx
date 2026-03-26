@@ -3,21 +3,29 @@ const reasons = [
     stat: "$5B+",
     title: "In Yearly Termite Damage",
     description: "Termites cause over $5 billion in property damage annually across the US — more than fires, storms, and earthquakes combined.",
+    image: "/termite-damage.jpg",
+    imageAlt: "Close-up of termite damage on wood",
   },
   {
     stat: "0%",
     title: "Insurance Coverage",
     description: "Most homeowners insurance policies do NOT cover termite damage. You could be on the hook for thousands in repairs.",
+    image: null,
+    imageAlt: "",
   },
   {
     stat: "$$$",
     title: "Early Detection Saves",
     description: "Catching termite activity early can save Riverside homeowners thousands in structural repair costs. Prevention is always cheaper than repair.",
+    image: null,
+    imageAlt: "",
   },
   {
     stat: "Required",
     title: "For Home Sales",
     description: "Most lenders require a termite inspection before approving a home sale. The inspection is free — if you need official clearance paperwork filed for escrow, a small filing fee applies.",
+    image: "/home-sale.jpg",
+    imageAlt: "Home sale keys and closing documents",
   },
 ];
 
@@ -38,11 +46,19 @@ export default function WhyInspect() {
           {reasons.map((reason) => (
             <div
               key={reason.title}
-              className="bg-white rounded-xl p-6 border border-gray-200 hover:border-orange transition-colors"
+              className="bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-orange transition-colors"
             >
-              <div className="text-3xl font-bold text-orange mb-2">{reason.stat}</div>
-              <h3 className="text-lg font-bold text-navy mb-2">{reason.title}</h3>
-              <p className="text-sm text-gray-600">{reason.description}</p>
+              {reason.image && (
+                <div
+                  className="w-full h-40 bg-cover bg-center"
+                  style={{ backgroundImage: `url('${reason.image}')` }}
+                />
+              )}
+              <div className="p-6">
+                <div className="text-3xl font-bold text-orange mb-2">{reason.stat}</div>
+                <h3 className="text-lg font-bold text-navy mb-2">{reason.title}</h3>
+                <p className="text-sm text-gray-600">{reason.description}</p>
+              </div>
             </div>
           ))}
         </div>
