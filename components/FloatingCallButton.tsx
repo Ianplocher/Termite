@@ -3,7 +3,7 @@
 export default function FloatingCallButton() {
   return (
     <a
-      href="tel:9515550100"
+      href="tel:9517772049"
       className="fixed bottom-6 right-6 z-50 md:hidden flex items-center justify-center w-14 h-14 bg-orange hover:bg-orange-dark text-white rounded-full shadow-lg hover:shadow-xl transition-all"
       aria-label="Call now"
     >

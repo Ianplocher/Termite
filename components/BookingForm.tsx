@@ -102,7 +102,7 @@ export default function BookingForm() {
           type="tel"
           value={form.phone}
           onChange={(e) => setForm({ ...form, phone: formatPhone(e.target.value) })}
-          placeholder="(951) 555-0100"
+          placeholder="(951) 777-2049"
           className={errors.phone ? "border-red-500" : ""}
         />
         {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}

@@ -115,7 +115,7 @@ export default function Calendar({ formData }: CalendarProps) {
       router.push("/thank-you");
     } catch (err) {
       console.error("Booking submission error:", err);
-      setSubmitError("Something went wrong. Please try again or call (951) 555-0100.");
+      setSubmitError("Something went wrong. Please try again or call (951) 777-2049.");
       setSubmitting(false);
     }
   }

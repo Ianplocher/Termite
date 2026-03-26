@@ -27,7 +27,7 @@ const faqs = [
   {
     question: "What areas do your Riverside termite inspectors cover?",
     answer:
-      "We serve all of Riverside plus Corona, Moreno Valley, Jurupa Valley, Norco, Eastvale, and surrounding Riverside County communities. If you're unsure whether we cover your area, give us a call at (951) 555-0100.",
+      "We serve all of Riverside plus Corona, Moreno Valley, Jurupa Valley, Norco, Eastvale, and surrounding Riverside County communities. If you're unsure whether we cover your area, give us a call at (951) 777-2049.",
   },
   {
     question: "What happens if termites are found during my inspection?",
@@ -62,7 +62,7 @@ const faqs = [
   {
     question: "How soon can I get an appointment?",
     answer:
-      "We typically offer same-week appointments for Riverside properties. Availability varies by season — spring and summer tend to be busier. Book online to see the latest available time slots, or call us at (951) 555-0100 for immediate assistance.",
+      "We typically offer same-week appointments for Riverside properties. Availability varies by season — spring and summer tend to be busier. Book online to see the latest available time slots, or call us at (951) 777-2049 for immediate assistance.",
   },
 ];
 
@@ -100,8 +100,8 @@ export default function FAQPage() {
             <h3 className="text-xl font-bold text-navy mb-2">Still Have Questions?</h3>
             <p className="text-gray-600 mb-4">
               Call us at{" "}
-              <a href="tel:9515550100" className="text-orange font-semibold hover:underline">
-                (951) 555-0100
+              <a href="tel:9517772049" className="text-orange font-semibold hover:underline">
+                (951) 777-2049
               </a>{" "}
               and we&apos;ll be happy to help.
             </p>

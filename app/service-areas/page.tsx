@@ -102,8 +102,8 @@ export default function ServiceAreasPage() {
             <h3 className="text-xl font-bold text-navy mb-2">Don&apos;t See Your City?</h3>
             <p className="text-gray-600 mb-4">
               We may still serve your area. Call us at{" "}
-              <a href="tel:9515550100" className="text-orange font-semibold hover:underline">
-                (951) 555-0100
+              <a href="tel:9517772049" className="text-orange font-semibold hover:underline">
+                (951) 777-2049
               </a>{" "}
               to check availability for your location.
             </p>

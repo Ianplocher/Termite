@@ -13,10 +13,10 @@ export default function Footer() {
               100% free inspections with no hidden fees.
             </p>
             <a
-              href="tel:9515550100"
+              href="tel:9517772049"
               className="text-lime hover:text-lime-light font-semibold text-lg"
             >
-              (951) 555-0100
+              (951) 777-2049
             </a>
           </div>
 

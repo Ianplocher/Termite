@@ -188,6 +188,30 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Send to Formspree
+    try {
+      await fetch("https://formspree.io/f/mjgpvrwa", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: lead.fullName,
+          email: lead.email,
+          phone: lead.phone,
+          address: lead.address,
+          propertyType: lead.propertyType,
+          bestTime: lead.bestTime,
+          notes: lead.notes,
+          appointmentDate: lead.date,
+          appointmentTime: lead.time,
+          source: "riverside-termite-website",
+          submittedAt: new Date().toISOString(),
+        }),
+      });
+      console.log("[Formspree] Lead submitted");
+    } catch (fsError) {
+      console.error("[Formspree] Failed:", fsError);
+    }
+
     // Send to webhook if configured (Zapier, Make, etc.)
     if (process.env.WEBHOOK_URL) {
       try {

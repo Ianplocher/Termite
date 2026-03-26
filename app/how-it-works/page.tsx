@@ -14,7 +14,7 @@ const steps = [
     number: "01",
     title: "Book Your Free Inspection Online",
     description:
-      "Choose a date and time that works for your schedule. Our online booking takes less than 60 seconds. No phone calls needed — though you're welcome to call us at (951) 555-0100 if you prefer.",
+      "Choose a date and time that works for your schedule. Our online booking takes less than 60 seconds. No phone calls needed — though you're welcome to call us at (951) 777-2049 if you prefer.",
     details: [
       "Available Monday through Saturday",
       "Same-week appointments often available",

@@ -28,7 +28,7 @@ export default function HomePage() {
                 description:
                   "Free professional termite inspections in Riverside, CA. Licensed inspectors, same-week availability, no obligation.",
                 url: "https://riverside-termite-inspection.com",
-                telephone: "(951) 555-0100",
+                telephone: "(951) 777-2049",
                 address: {
                   "@type": "PostalAddress",
                   streetAddress: "3900 Main Street",
