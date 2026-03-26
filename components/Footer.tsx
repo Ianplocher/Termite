@@ -28,6 +28,7 @@ export default function Footer() {
               <li><Link href="/how-it-works" className="hover:text-lime transition-colors">How It Works</Link></li>
               <li><Link href="/why-termite-inspections" className="hover:text-lime transition-colors">Why Inspect?</Link></li>
               <li><Link href="/service-areas" className="hover:text-lime transition-colors">Service Areas</Link></li>
+              <li><Link href="/blog" className="hover:text-lime transition-colors">Blog</Link></li>
               <li><Link href="/faq" className="hover:text-lime transition-colors">FAQ</Link></li>
             </ul>
           </div>

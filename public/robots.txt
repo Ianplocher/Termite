@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /thank-you
 
-Sitemap: https://riverside-termite-inspection.com/sitemap.xml
+Sitemap: https://www.riversidetermiteinspection.com/sitemap.xml

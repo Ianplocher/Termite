@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/how-it-works", label: "How It Works" },
   { href: "/why-termite-inspections", label: "Why Inspect?" },
   { href: "/service-areas", label: "Service Areas" },
+  { href: "/blog", label: "Blog" },
   { href: "/faq", label: "FAQ" },
 ];
 
