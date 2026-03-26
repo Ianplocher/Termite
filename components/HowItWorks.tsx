@@ -43,7 +43,7 @@ export default function HowItWorks() {
               style={{ backgroundImage: "url('/inspector-home.jpg')" }}
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy/80 to-transparent p-6">
-              <p className="text-white font-semibold text-lg">Don't let termite damage go undetected</p>
+              <p className="text-white font-semibold text-lg">Don&apos;t let termite damage go undetected</p>
             </div>
           </div>
 
