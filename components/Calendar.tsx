@@ -23,18 +23,6 @@ const MONTHS = [
   "July", "August", "September", "October", "November", "December"
 ];
 
-function seededRandom(seed: number): number {
-  const x = Math.sin(seed) * 10000;
-  return x - Math.floor(x);
-}
-
-function getSlotStatus(dateStr: string, slotIndex: number): "available" | "almost-full" | "booked" {
-  const seed = dateStr.split("").reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
-  const r1 = seededRandom(seed + slotIndex * 7);
-  if (r1 < 0.2) return "booked";
-  if (r1 < 0.5) return "almost-full";
-  return "available";
-}
 
 export default function Calendar({ formData }: CalendarProps) {
   const router = useRouter();
@@ -218,37 +206,20 @@ export default function Calendar({ formData }: CalendarProps) {
             </div>
           )}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {TIME_SLOTS.map((slot, i) => {
-              const status = getSlotStatus(selectedDate, i);
-              const isBooked = status === "booked";
-
-              return (
-                <Button
-                  key={slot}
-                  variant={selectedTime === slot ? "default" : "outline"}
-                  disabled={isBooked || submitting}
-                  onClick={() => handleTimeSelect(slot)}
-                  className={`
-                    relative py-6 text-base justify-between
-                    ${isBooked ? "opacity-50 cursor-not-allowed line-through" : ""}
-                    ${selectedTime === slot ? "bg-orange hover:bg-orange-dark text-white" : ""}
-                    ${status === "almost-full" && selectedTime !== slot ? "border-orange text-orange" : ""}
-                  `}
-                >
-                  <span>{slot}</span>
-                  {status === "almost-full" && (
-                    <span className="text-xs font-semibold bg-orange/10 text-orange px-2 py-1 rounded">
-                      Only 2 spots left
-                    </span>
-                  )}
-                  {isBooked && (
-                    <span className="text-xs font-semibold text-gray-400">
-                      Fully Booked
-                    </span>
-                  )}
-                </Button>
-              );
-            })}
+            {TIME_SLOTS.map((slot) => (
+              <Button
+                key={slot}
+                variant={selectedTime === slot ? "default" : "outline"}
+                disabled={submitting}
+                onClick={() => handleTimeSelect(slot)}
+                className={`
+                  relative py-6 text-base
+                  ${selectedTime === slot ? "bg-orange hover:bg-orange-dark text-white" : ""}
+                `}
+              >
+                {slot}
+              </Button>
+            ))}
           </div>
         </div>
       )}
