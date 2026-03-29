@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -36,9 +37,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <head>
-        {/* Google Analytics placeholder — replace GA_MEASUREMENT_ID with your actual ID */}
-        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> */}
-        {/* <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');` }} /> */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-361381758"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-361381758');`}
+        </Script>
       </head>
       <body className="antialiased min-h-screen flex flex-col">
         <Header />
