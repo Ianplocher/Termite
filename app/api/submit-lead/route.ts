@@ -102,6 +102,44 @@ async function createFieldRoutesCustomer(lead: LeadPayload) {
   return result;
 }
 
+async function getOrCreateRoute(date: string): Promise<string> {
+  // Step 1: Search for an existing unassigned "Website Leads" Termite route on this date
+  const searchResult = await fieldRoutesRequest("/route/search", {
+    officeIDs: "[1]",
+    date: date,
+    groupTitle: "Termite",
+    includeData: "1",
+  });
+
+  const routes = searchResult?.routes || [];
+  // Find an unassigned route titled "Website Leads"
+  const unassignedRoute = routes.find(
+    (r: { assignedTech: string; title: string }) =>
+      r.assignedTech === "0" && r.title === "Website Leads"
+  );
+
+  if (unassignedRoute) {
+    return String(unassignedRoute.routeID);
+  }
+
+  // Step 2: No unassigned Termite route exists — create one
+  const createResult = await fieldRoutesRequest("/route/create", {
+    officeID: "1",
+    date: date,
+    templateID: "3", // Termite route template
+    autoCreateGroup: "1",
+    title: "Website Leads",
+    assignedTech: "0", // Unassigned
+  });
+
+  const routeId = createResult?.result;
+  if (!routeId) {
+    throw new Error("Failed to create Termite route for date: " + date);
+  }
+
+  return String(routeId);
+}
+
 async function createFieldRoutesAppointment(
   customerId: string,
   lead: LeadPayload
@@ -111,13 +149,16 @@ async function createFieldRoutesAppointment(
   const startHour = parseInt(time24.split(":")[0]);
   const endTime = `${String(startHour + 1).padStart(2, "0")}:00:00`;
 
+  // Get or create a route for the selected date
+  const routeId = await getOrCreateRoute(lead.date);
+
   const appointmentData: Record<string, string> = {
     officeID: "1",
     customerID: customerId,
-    date: lead.date, // YYYY-MM-DD
+    routeID: routeId,
     start: time24,
     end: endTime,
-    type: "Inspection",
+    type: "93", // Termite Inspection service type
     notes: `Free Termite Inspection\nProperty: ${lead.propertyType}\nBest contact time: ${lead.bestTime}${lead.notes ? `\nCustomer notes: ${lead.notes}` : ""}`,
     duration: "60",
   };
@@ -160,7 +201,7 @@ export async function POST(request: NextRequest) {
       try {
         // Step 1: Create customer in FieldRoutes
         const customerResult = await createFieldRoutesCustomer(lead);
-        const customerId = customerResult?.id || customerResult?.customerID;
+        const customerId = customerResult?.result || customerResult?.id || customerResult?.customerID;
 
         // Step 2: Create appointment if customer was created
         if (customerId) {
@@ -171,7 +212,7 @@ export async function POST(request: NextRequest) {
           fieldRoutesResult = {
             customerId,
             appointmentId:
-              appointmentResult?.id || appointmentResult?.appointmentID,
+              appointmentResult?.result || appointmentResult?.id || appointmentResult?.appointmentID,
           };
         }
 
