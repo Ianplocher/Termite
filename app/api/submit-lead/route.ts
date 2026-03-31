@@ -79,6 +79,7 @@ async function createFieldRoutesCustomer(lead: LeadPayload) {
   const phoneDigits = lead.phone.replace(/\D/g, "");
 
   const customerData: Record<string, string> = {
+    officeID: "1",
     fname: firstName,
     lname: lastName,
     phone1: phoneDigits,
@@ -111,6 +112,7 @@ async function createFieldRoutesAppointment(
   const endTime = `${String(startHour + 1).padStart(2, "0")}:00:00`;
 
   const appointmentData: Record<string, string> = {
+    officeID: "1",
     customerID: customerId,
     date: lead.date, // YYYY-MM-DD
     start: time24,
