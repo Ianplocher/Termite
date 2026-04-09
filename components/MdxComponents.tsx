@@ -64,6 +64,25 @@ export const mdxComponents: MDXComponents = {
       {children}
     </li>
   ),
+  table: ({ children, ...props }) => (
+    <div className="overflow-x-auto mb-6">
+      <table className="w-full text-sm text-left border border-gray-200 rounded-lg" {...props}>
+        {children}
+      </table>
+    </div>
+  ),
+  thead: ({ children, ...props }) => (
+    <thead className="bg-navy text-white" {...props}>{children}</thead>
+  ),
+  th: ({ children, ...props }) => (
+    <th className="px-4 py-3 font-semibold" {...props}>{children}</th>
+  ),
+  td: ({ children, ...props }) => (
+    <td className="px-4 py-3 border-t border-gray-200 text-gray-700" {...props}>{children}</td>
+  ),
+  tr: ({ children, ...props }) => (
+    <tr className="even:bg-gray-50" {...props}>{children}</tr>
+  ),
   blockquote: ({ children, ...props }) => (
     <blockquote
       className="border-l-4 border-lime pl-4 py-2 my-6 bg-cream rounded-r-lg italic text-gray-600"
@@ -79,4 +98,5 @@ export const mdxComponents: MDXComponents = {
   ),
   // Custom components available in MDX
   CTA: BlogCTA,
+  BlogCTA: BlogCTA,
 };
