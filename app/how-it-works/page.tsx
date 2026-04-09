@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: "How Our Free Termite Inspection Works",
   description:
     "Learn how easy it is to schedule a free termite inspection in Riverside, CA. Book online, we come to you, and you get a full written report — all at no cost.",
+  alternates: {
+    canonical: "https://riversidetermiteinspection.com/how-it-works",
+  },
+  openGraph: {
+    title: "How Our Free Termite Inspection Works",
+    description:
+      "Learn how easy it is to schedule a free termite inspection in Riverside, CA. Book online, we come to you, and you get a full written report.",
+    url: "https://riversidetermiteinspection.com/how-it-works",
+    type: "website",
+    locale: "en_US",
+    siteName: "Riverside Termite Inspection",
+  },
 };
 
 const steps = [
@@ -94,6 +106,19 @@ export default function HowItWorksPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Links */}
+      <section className="py-10 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 className="text-lg font-bold text-navy mb-4 text-center">Learn More</h3>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <Link href="/why-termite-inspections" className="text-orange hover:underline">Why Inspect?</Link>
+            <Link href="/faq" className="text-orange hover:underline">FAQ</Link>
+            <Link href="/service-areas" className="text-orange hover:underline">Service Areas</Link>
+            <Link href="/blog" className="text-orange hover:underline">Termite Blog</Link>
           </div>
         </div>
       </section>

@@ -9,6 +9,10 @@ import FloatingCallButton from "@/components/FloatingCallButton";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://riversidetermiteinspection.com"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Free Termite Inspection in Riverside CA | Book Online Today",
     template: "%s | Riverside Termite Inspection",
@@ -19,6 +23,7 @@ export const metadata: Metadata = {
     title: "Free Termite Inspection in Riverside CA | Book Online Today",
     description:
       "Get a 100% free termite inspection in Riverside, CA. Licensed inspectors, no obligation, same-week availability. Book your spot online in 60 seconds.",
+    url: "https://riversidetermiteinspection.com",
     type: "website",
     locale: "en_US",
     siteName: "Riverside Termite Inspection",

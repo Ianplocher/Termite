@@ -6,6 +6,18 @@ export const metadata: Metadata = {
   title: "Why Termite Inspections Matter in Riverside CA",
   description:
     "Learn why Riverside homeowners need regular termite inspections. Termites cause billions in damage yearly and most insurance doesn't cover it. Get a free inspection today.",
+  alternates: {
+    canonical: "https://riversidetermiteinspection.com/why-termite-inspections",
+  },
+  openGraph: {
+    title: "Why Termite Inspections Matter in Riverside CA",
+    description:
+      "Learn why Riverside homeowners need regular termite inspections. Termites cause billions in damage yearly and most insurance doesn't cover it.",
+    url: "https://riversidetermiteinspection.com/why-termite-inspections",
+    type: "website",
+    locale: "en_US",
+    siteName: "Riverside Termite Inspection",
+  },
 };
 
 export default function WhyTermiteInspectionsPage() {
@@ -98,6 +110,19 @@ export default function WhyTermiteInspectionsPage() {
                 Planning to sell your Riverside home? Most lenders require a termite inspection (also known as a Wood Destroying Organism report) before approving the buyer&apos;s loan. Getting a free inspection now helps you plan ahead, identify any issues early, and avoid last-minute delays that could jeopardize your sale.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Links */}
+      <section className="py-10 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 className="text-lg font-bold text-navy mb-4 text-center">Learn More</h3>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <Link href="/how-it-works" className="text-orange hover:underline">How Inspections Work</Link>
+            <Link href="/faq" className="text-orange hover:underline">FAQ</Link>
+            <Link href="/service-areas" className="text-orange hover:underline">Service Areas</Link>
+            <Link href="/blog" className="text-orange hover:underline">Termite Blog</Link>
           </div>
         </div>
       </section>

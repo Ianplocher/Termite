@@ -5,6 +5,18 @@ export const metadata: Metadata = {
   title: "Schedule Your Free Termite Inspection",
   description:
     "Book your free termite inspection in Riverside, CA in 60 seconds. Licensed inspectors, same-week appointments, no hidden fees. Schedule online now.",
+  alternates: {
+    canonical: "https://riversidetermiteinspection.com/schedule",
+  },
+  openGraph: {
+    title: "Schedule Your Free Termite Inspection",
+    description:
+      "Book your free termite inspection in Riverside, CA in 60 seconds. Licensed inspectors, same-week appointments, no hidden fees.",
+    url: "https://riversidetermiteinspection.com/schedule",
+    type: "website",
+    locale: "en_US",
+    siteName: "Riverside Termite Inspection",
+  },
 };
 
 export default function SchedulePage() {

@@ -6,6 +6,18 @@ export const metadata: Metadata = {
   title: "Service Areas | Riverside & Surrounding Cities",
   description:
     "Free termite inspections serving Riverside, Corona, Moreno Valley, Jurupa Valley, Norco, and surrounding Riverside County communities. Book online today.",
+  alternates: {
+    canonical: "https://riversidetermiteinspection.com/service-areas",
+  },
+  openGraph: {
+    title: "Termite Inspection Service Areas | Riverside & Surrounding Cities",
+    description:
+      "Free termite inspections serving Riverside, Corona, Moreno Valley, Jurupa Valley, Norco, and surrounding Riverside County communities.",
+    url: "https://riversidetermiteinspection.com/service-areas",
+    type: "website",
+    locale: "en_US",
+    siteName: "Riverside Termite Inspection",
+  },
 };
 
 const serviceAreas = [
@@ -107,6 +119,11 @@ export default function ServiceAreasPage() {
               </a>{" "}
               to check availability for your location.
             </p>
+            <div className="flex flex-wrap justify-center gap-4 mt-4 text-sm">
+              <Link href="/faq" className="text-orange hover:underline">FAQ</Link>
+              <Link href="/how-it-works" className="text-orange hover:underline">How It Works</Link>
+              <Link href="/blog" className="text-orange hover:underline">Termite Blog</Link>
+            </div>
           </div>
         </div>
       </section>

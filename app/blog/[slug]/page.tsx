@@ -21,12 +21,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.description,
+    alternates: {
+      canonical: `https://riversidetermiteinspection.com/blog/${params.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
+      url: `https://riversidetermiteinspection.com/blog/${params.slug}`,
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
+      siteName: "Riverside Termite Inspection",
+      locale: "en_US",
       ...(post.image ? { images: [post.image] } : {}),
     },
   };
@@ -54,10 +60,10 @@ export default function BlogPostPage({ params }: Props) {
     publisher: {
       "@type": "Organization",
       name: "Riverside Termite Inspection",
-      url: "https://www.riversidetermiteinspection.com",
+      url: "https://riversidetermiteinspection.com",
     },
     datePublished: post.date,
-    mainEntityOfPage: `https://www.riversidetermiteinspection.com/blog/${post.slug}`,
+    mainEntityOfPage: `https://riversidetermiteinspection.com/blog/${post.slug}`,
     ...(post.image ? { image: post.image } : {}),
   };
 

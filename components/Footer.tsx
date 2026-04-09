@@ -48,7 +48,7 @@ export default function Footer() {
 
         <div className="border-t border-navy-light mt-8 pt-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-400">
-            <p>&copy; 2025 Riverside Termite Inspection. All rights reserved.</p>
+            <p>&copy; 2026 Riverside Termite Inspection. All rights reserved.</p>
             <div className="flex gap-4">
               <Link href="/faq" className="hover:text-white transition-colors">FAQ</Link>
               <span>Privacy Policy</span>

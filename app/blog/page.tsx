@@ -9,6 +9,18 @@ export const metadata: Metadata = {
   title: "Termite Blog | Riverside Pest Control Tips & Guides",
   description:
     "Expert termite tips, inspection guides, and pest control advice for Riverside CA homeowners. Learn how to protect your home from termite damage.",
+  alternates: {
+    canonical: "https://riversidetermiteinspection.com/blog",
+  },
+  openGraph: {
+    title: "Termite Blog | Riverside Pest Control Tips & Guides",
+    description:
+      "Expert termite tips, inspection guides, and pest control advice for Riverside CA homeowners.",
+    url: "https://riversidetermiteinspection.com/blog",
+    type: "website",
+    locale: "en_US",
+    siteName: "Riverside Termite Inspection",
+  },
 };
 
 export default function BlogIndexPage() {

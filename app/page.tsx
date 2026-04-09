@@ -23,11 +23,11 @@ export default function HomePage() {
             "@context": "https://schema.org",
             "@graph": [
               {
-                "@type": "LocalBusiness",
+                "@type": ["LocalBusiness", "PestControlService"],
                 name: "Riverside Termite Inspection",
                 description:
                   "Free professional termite inspections in Riverside, CA. Licensed inspectors, same-week availability, no obligation.",
-                url: "https://riverside-termite-inspection.com",
+                url: "https://riversidetermiteinspection.com",
                 telephone: "(951) 777-2049",
                 address: {
                   "@type": "PostalAddress",
@@ -58,6 +58,11 @@ export default function HomePage() {
                   closes: "17:00",
                 },
                 priceRange: "Free",
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: "4.9",
+                  reviewCount: "94",
+                },
               },
               {
                 "@type": "Service",

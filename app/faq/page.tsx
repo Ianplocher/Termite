@@ -6,6 +6,18 @@ export const metadata: Metadata = {
   title: "FAQ | Free Termite Inspection Riverside CA",
   description:
     "Answers to common questions about free termite inspections in Riverside, CA. Learn about the process, what to expect, and how to schedule your inspection.",
+  alternates: {
+    canonical: "https://riversidetermiteinspection.com/faq",
+  },
+  openGraph: {
+    title: "FAQ | Free Termite Inspection Riverside CA",
+    description:
+      "Answers to common questions about free termite inspections in Riverside, CA. Learn about the process, what to expect, and how to schedule.",
+    url: "https://riversidetermiteinspection.com/faq",
+    type: "website",
+    locale: "en_US",
+    siteName: "Riverside Termite Inspection",
+  },
 };
 
 const faqs = [
@@ -66,9 +78,27 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
 export default function FAQPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* Hero */}
       <section className="bg-navy text-white py-16 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -105,6 +135,12 @@ export default function FAQPage() {
               </a>{" "}
               and we&apos;ll be happy to help.
             </p>
+            <div className="flex flex-wrap justify-center gap-4 mt-4 text-sm">
+              <Link href="/how-it-works" className="text-orange hover:underline">How It Works</Link>
+              <Link href="/service-areas" className="text-orange hover:underline">Service Areas</Link>
+              <Link href="/blog" className="text-orange hover:underline">Termite Blog</Link>
+              <Link href="/why-termite-inspections" className="text-orange hover:underline">Why Inspect?</Link>
+            </div>
           </div>
         </div>
       </section>

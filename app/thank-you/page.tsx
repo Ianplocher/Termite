@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
+// Note: noindex is set via app/thank-you/metadata.ts
+
 interface BookingData {
   fullName: string;
   phone: string;
